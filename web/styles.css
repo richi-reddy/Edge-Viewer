@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial;
+}
+
+.container {
+  padding: 20px;
+}
+
+.frame-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
