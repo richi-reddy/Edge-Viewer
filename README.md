@@ -136,3 +136,20 @@ Git repository includes:
 ✅ OpenGL ES renderer
 ✅ Web viewer
 ✅ Documentation + structure
+
+## How to Run (Android)
+
+1. Open project in Android Studio
+2. Ensure NDK + CMake are installed
+3. Connect Android device
+4. Run the app
+
+## How to Run (Web)
+
+cd web
+npm install
+npm run build
+npm start
+Open http://localhost:8081/
+
+
