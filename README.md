@@ -1,155 +1,120 @@
-EdgeViewer – Android + OpenCV C++ + OpenGL ES + Web Viewer
-📌 Overview
+# EdgeViewer – Android + OpenCV C++ + OpenGL ES + Web Viewer
+
+## 📌 Overview
 
 EdgeViewer is a real-time edge detection viewer that:
 
-✅ Captures camera frames on Android (Camera2 + TextureView)
-✅ Sends each frame to C++ via JNI
-✅ Processes it using OpenCV (C++ / NDK)
-✅ Returns an ARGB image
-✅ Renders it using OpenGL ES 2.0 as a texture
-✅ Also provides a TypeScript-based web viewer that displays a processed sample frame
+✅ Captures camera frames on Android (Camera2 + TextureView)  
+✅ Sends each frame to C++ via JNI  
+✅ Processes it using OpenCV (C++ / NDK)  
+✅ Returns an ARGB8888 image  
+✅ Renders it using OpenGL ES 2.0 as a texture  
+✅ Includes a TypeScript-based web viewer that displays a processed sample frame
 
 This project demonstrates integration across:
 
-Android SDK (Kotlin)
+- Android SDK (Kotlin)
+- NDK / JNI
+- OpenCV C++
+- OpenGL ES 2.0
+- TypeScript (Web)
 
-NDK / JNI
+---
 
-OpenCV C++
-
-OpenGL ES 2.0
-
-TypeScript (Web)
-
-📂 Project Structure
+## 📂 Project Structure
 EdgeViewer/
- ├── app/              Android Kotlin source
- ├── jni/              C++ OpenCV processing (JNI)
- ├── gl/               OpenGL ES renderer classes
- ├── web/              TypeScript web viewer
- │    ├── src/
- │    ├── dist/
- │    ├── public/
- │    ├── package.json
- │    ├── tsconfig.json
- ├── screenshots/
- ├── README.md         ✅ this file
+├── app/ # Android Kotlin source
+├── jni/ # C++ OpenCV processing (JNI)
+├── gl/ # OpenGL ES renderer classes
+├── web/ # TypeScript web viewer
+│ ├── src/
+│ ├── dist/
+│ ├── public/
+│ ├── package.json
+│ ├── tsconfig.json
+├── screenshots/ # app screenshots
+└── README.md
 
-🚀 Features
+---
 
-✅ Camera feed using Camera2 + TextureView
-✅ JNI bridge to native C++
-✅ OpenCV processing (Canny / grayscale)
-✅ OpenGL ES 2.0 rendering at ~10–15 FPS
-✅ TypeScript web viewer showing processed frame
+## ✅ Features Implemented
 
-🧠 Architecture Flow
+✅ Camera feed using Camera2 + TextureView  
+✅ JNI bridge to native C++  
+✅ OpenCV processing (Canny edge detection)  
+✅ OpenGL ES rendering at ~10–15 FPS  
+✅ TypeScript web viewer displaying processed frame  
+✅ Proper repository structure  
+✅ Public GitHub repo with commits
+
+---
+
+## 🧠 Architecture Flow
 Camera2 (Android)
-     ↓ Y-plane
+↓ Y-plane (NV21)
 JNI (Kotlin → C++)
-     ↓
+↓
 OpenCV C++ (Canny / grayscale)
-     ↓ ARGB8888 buffer
+↓ ARGB8888 buffer
 OpenGL ES texture
-     ↓
+↓
 Screen rendering
 
+---
 
-Web viewer:
+## ⚙️ Setup Instructions
 
-dist/sample.png → HTML + TypeScript → Display
-
-🔧 Android Setup
+### ✅ Android
 
 Requirements:
 
-Android Studio
+- Android Studio
+- NDK installed
+- OpenCV Android native library
 
-NDK installed
+Build:
+Open project in Android Studio
+Build & Run on a device
 
-OpenCV for Android (included via native libs)
+---
 
-Run:
-
-Open in Android Studio
-Build & Run
-
-🧩 Native C++ (JNI + OpenCV)
-
-Located in:
-
-jni/
-
-
-Responsibilities:
-
-✅ Receive grayscale frame
-✅ Process with OpenCV
-✅ Return ARGB buffer to Kotlin
-
-🎨 OpenGL ES Renderer
-
-Located in:
-
-gl/GLRenderer.kt
-
-
-Responsibilities:
-
-✅ Upload texture from native output
-✅ Render full-screen quad
-✅ Maintain 10–15 FPS minimum
-
-🌐 Web Viewer (TypeScript)
-
-Located in:
-
-web/
-
-
-To build:
-
+### ✅ Web Viewer
 cd web
 npm install
 npm run build
 npm start
 
 
-Then open:
-
+Open in browser:
 http://localhost:8081
 
-🖼 Screenshots
+---
 
-(You will add)
+## 🏗 Tech Stack
 
-screenshots/android.png
-screenshots/web.png
+- Kotlin
+- C++ (OpenCV)
+- JNI / NDK
+- OpenGL ES 2.0
+- TypeScript
+- HTML/CSS
 
-✅ Submission Notes
+---
 
-Git repository includes:
+## ⭐ Bonus Implemented
 
-✅ Android processing pipeline
-✅ JNI + C++ OpenCV integration
-✅ OpenGL ES renderer
-✅ Web viewer
-✅ Documentation + structure
+✅ FPS visible on web view  
+✅ Clean modular structure
 
-## How to Run (Android)
+---
 
-1. Open project in Android Studio
-2. Ensure NDK + CMake are installed
-3. Connect Android device
-4. Run the app
+## 📦 Submission Notes
 
-## How to Run (Web)
+This project fulfills:
 
-cd web
-npm install
-npm run build
-npm start
-Open http://localhost:8081/
-
+✅ Native C++ integration (JNI)  
+✅ OpenCV usage  
+✅ OpenGL rendering  
+✅ TypeScript web viewer  
+✅ Proper Git repository
 
